@@ -7,60 +7,56 @@ import java.sql.Statement;
 
 
 
-public class StakeHolder{
+public class SprintMembers{
 	
 	private static Statement stmnt = null;
 	
-	public static void createSH(String stakeHolderID, String shFirst, String shLast, 
-								String shType, String projectID, Connection conn1){
+	public static void createSM(String employeeID, String sprintID, Connection conn1){
 		try{
-			String sql = "INSERT INTO StakeHolder (stakeHolderID, shFirst, shLast, shType, projectID) VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO SprintMembers(employeeID, sprintID) VALUES (?, ?)";
 			PreparedStatement statement = conn1.prepareStatement(sql);
-			statement.setString(1, stakeHolderID);
-			statement.setString(2, shFirst);
-			statement.setString(3, shLast);
-			statement.setString(4, shType);
-			statement.setString(5, projectID);
+			statement.setString(1, employeeID);
+			statement.setString(2, sprintID);
 			int rowCreated = statement.executeUpdate();
 			if (rowCreated > 0) {
-			    System.out.println("StakeHolder added successfully.");
+			    System.out.println("Members created successfully.");
 			}
 		}catch(SQLException ex){
 			ex.printStackTrace();
 		}
 	}
-	public static void updateSH(String attr1, String attr2, String selectedID, Connection conn1){
+	public static void updateSM(String attr1, String attr2, String selectedID, Connection conn1){
 		try{
-			String sql = "UPDATE StakeHolder SET ? = ? WHERE stakeHolderID=?";
+			String sql = "UPDATE SprintMembers SET ? = ? WHERE employeeID=?";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, attr1);
 			statement.setString(2, attr2);
 			statement.setString(3, selectedID);
 			int rowCreated = statement.executeUpdate();
 			if (rowCreated > 0) {
-			    System.out.println("StakeHolder updated successfully.");
+			    System.out.println("Sprint Member updated successfully.");
 			}
 		}catch(SQLException ex){
 			ex.printStackTrace();
 		}
 	}
-	public static void deleteSH(String selectedID, Connection conn1){
+	public static void deleteSM(String selectedID, Connection conn1){
 		try{
-			String sql = "DELETE FROM StakeHolder WHERE stakeHolderID=?";
+			String sql = "DELETE FROM SprintMembers WHERE employeeID=?";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, selectedID);
 			int rowCreated = statement.executeUpdate();
 			if (rowCreated > 0) {
-			    System.out.println("StakeHolder updated successfully.");
+			    System.out.println("Sprint Member successfully.");
 			}
 		}catch(SQLException ex){
 			ex.printStackTrace();
 		}
 	}
-	public static void selectSH(Connection conn1){
+	public static void selectSM(Connection conn1){
 		try{
 			stmnt = conn1.createStatement();
-			ResultSet results = stmnt.executeQuery("SELECT * from StakeHolder");
+			ResultSet results = stmnt.executeQuery("SELECT * from SprintMembers");
 			ResultSetMetaData rsmd = results.getMetaData();
 			int numberCols = rsmd.getColumnCount();
 			for(int i=1;i<=numberCols;i++)
@@ -68,13 +64,9 @@ public class StakeHolder{
 			System.out.println("\n----------------------------------------"
 					+ "------------------------------------------------------------");
 			while(results.next()){
-				String stakeHolderID = results.getString(1);//row data
-				String shFirst = results.getString(2);
-				String shLast = results.getString(3);
-				String shType = results.getString(4);//row data
-				String projectID = results.getString(5);
-				System.out.println(stakeHolderID+"\t\t\t"+shFirst+"\t\t\t"+shLast+
-						"\t\t\t"+shType+"\t\t\t"+projectID);
+				String employeeID = results.getString(1);//row data
+				String sprintID = results.getString(2);
+				System.out.println(employeeID+"\t\t\t"+sprintID);
 			}
 			results.close();
 			stmnt.close();
