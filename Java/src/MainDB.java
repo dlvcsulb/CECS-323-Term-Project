@@ -19,4 +19,17 @@ public class MainDB {
 	public static void run(){
 		
 	}
+	public static void menu(){
+		System.out.println("Welcome to the Scrum Team Database"
+				+ ".........."
+				+ ". Please select one of the following options: \n"
+				+ " 1. CRUD for Stakeholders."
+				+ " \n 2. CRUD for Sprint Team Members."
+				+ " \n 3. CRUD for User Stories."
+				+ "	\n 4. Create Sprints"
+				+ " \n 5. Add User Stories to Backlog."
+				+ " \n 6. List a developer and his sprints."
+				+ " \n 7. List Developers on a Sprint."
+				+ " \n 8. Quit.");
+	}
 }
