@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class MainDB {
-	
+	//test
 	private static String dbURL1 = "jdbc:mysql://10.39.52.172:3306/teamDB?"+
 			"user=cecs323b&password=cecs323";
 	private static Connection conn1 = null;
