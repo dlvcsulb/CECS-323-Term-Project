@@ -1,21 +1,34 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Scanner;
 
-
-
-public class Sprints {
-	
+public class Sprints
+{
 	private static Statement stmnt = null;
+	private static Scanner console = new Scanner(System.in);
 	
-	public static void createSprint(String sprintID, String projectID, String sprintIteration, 
-								String startDate, String endDate,
-								boolean completion, String userStory,
-								String softwareEngineers, String projectName, Connection conn1){
-		try{
+	public static void createSprint(Connection conn1)
+	{
+		try
+		{
+			System.out.print("Enter the sprint ID: ");
+			String sprintID = console.nextLine();
+			System.out.print("Enter the project ID: ");
+			String projectID = console.nextLine();
+			System.out.print("Enter the sprint iteration: ");
+			String sprintIteration = console.nextLine();
+			System.out.print("Enter the start date: ");
+			String startDate = console.nextLine();
+			System.out.print("Enter the end date: ");
+			String endDate = console.nextLine();
+			System.out.print("Enter the completion status (true or false): ");
+			boolean completion = console.nextBoolean();
+			System.out.print("Enter the user story: ");
+			String userStory = console.nextLine();
+			System.out.print("Enter the software engineers: ");
+			String softwareEngineers = console.nextLine();
+			System.out.print("Enter the project name: ");
+			String projectName = console.nextLine();
+			
 			String sql = "INSERT INTO Sprints(sprintID, projectID, sprintIteration, startDate, endDate, completion, userStory, softwareEngineers, projectName) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, sprintID);
@@ -27,25 +40,32 @@ public class Sprints {
 			statement.setString(7, userStory);
 			statement.setString(8, softwareEngineers);
 			statement.setString(9, projectName);
+
 			int rowCreated = statement.executeUpdate();
-			if (rowCreated > 0) {
-			    System.out.println("Sprint created successfully.");
-			}
-		}catch(SQLException ex){
+			if (rowCreated > 0)
+				System.out.println("Sprint created successfully.");
+		} catch(SQLException ex)
+		{
 			ex.printStackTrace();
 		}
 	}
-	public static void selectSprint(Connection conn1){
-		try{
+
+	public static void selectSprint(Connection conn1)
+	{
+		try
+		{
 			stmnt = conn1.createStatement();
 			ResultSet results = stmnt.executeQuery("SELECT * from Sprints");
 			ResultSetMetaData rsmd = results.getMetaData();
 			int numberCols = rsmd.getColumnCount();
-			for(int i=1;i<=numberCols;i++)
+			
+			for(int i = 1; i <= numberCols; i++)
 				System.out.print(rsmd.getColumnLabel(i)+"\t\t"); //prints column names
 			System.out.println("\n----------------------------------------"
 					+ "------------------------------------------------------------");
-			while(results.next()){
+			
+			while(results.next())
+			{
 				String sprintID = results.getString(1);//row data
 				String projectID = results.getString(2);
 				String sprintIteration = results.getString(3);
@@ -61,9 +81,9 @@ public class Sprints {
 			}
 			results.close();
 			stmnt.close();
-		}catch(SQLException ex){
+		} catch(SQLException ex)
+		{
 			ex.printStackTrace();
 		}
 	}
-
 }
