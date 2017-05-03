@@ -6,15 +6,20 @@ public class MainDB {
 	//test
 	private static String dbURL1 = "jdbc:mysql://10.39.52.172:3306/teamDB?"+
 			"user=cecs323b&password=cecs323";
+	private static boolean run;
 	private static Connection conn1 = null;
 	private static Statement stmnt = null;
 	private static int userEntry = 0;
 	private static Scanner console = new Scanner(System.in);
-	public static Sprints sprint = new Sprints();
+	private  static Sprints sprint = new Sprints();
+	private static UserStory userStory = new UserStory();
+	private static Developer developer = new Developer();
+	private static StakeHolder stakeHolder = new StakeHolder();
+	private static SprintMembers sprintMembers = new SprintMembers();
 	
 	public static void main(String[] args) {
 		CreateConnection(); //call the connection method to connect to db
-		boolean run = true;
+		run = true;
 		//Switch case menu to run the users requests
 		while (run) {
 			menu1();
@@ -28,24 +33,19 @@ public class MainDB {
 			case 3:
 				menu4();
 				break;
-			case 4:
-				
+			case 4:				
 				sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
 				break;
 			case 5:
-				addNewMeeting();
+				userStory.createUS(storyID, perspective, request, benefit, priority, conn1);
 				break;
 			case 6:
-				addNewConferenceRoom();
 				break;
 			case 7:
-				listByPurpose();
+				developer.selectDev(conn1);
 				break;
 			case 8:
-				addNewTeam();
-				break;
-			case 9:
-				Shutdown();
+				//Shutdown();
 				run = false;
 				break;
 			default:
@@ -62,9 +62,7 @@ public class MainDB {
 			ex.printStackTrace();
 		}
 	}
-	public static void run(){
-		
-	}
+
 	public static void menu1(){
 		userEntry = 0;
 		System.out.println("Welcome to the Scrum Team Database"
@@ -91,6 +89,26 @@ public class MainDB {
 				+ "	\n 4. delete stakeholder"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
+		switch (userEntry) {
+		case 1:
+			stakeHolder.createSH(stakeHolderID, shFirst, shLast, shType, projectID, conn1);
+			break;
+		case 2:
+			stakeHolder.selectSH(conn1);
+			break;
+		case 3:
+			stakeHolder.updateSH(attr1, attr2, selectedID, conn1);
+			break;
+		case 4:				
+			sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
+			break;
+		case 5:
+			//Shutdown();
+			run = false;
+			break;
+		default:
+			System.out.println("Please select a valid option.");
+		}
 	}
 	public static void menu3(){
 		userEntry = 0;
@@ -103,7 +121,28 @@ public class MainDB {
 				+ "	\n 4. delete team member"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
+		switch (userEntry) {
+		case 1:
+			sprintMembers.createSM(employeeID, sprintID, conn1);
+			break;
+		case 2:
+			sprintMembers.selectSM(conn1);
+			break;
+		case 3:
+			sprintMembers.updateSM(attr1, attr2, selectedID, conn1);
+			break;
+		case 4:				
+			sprintMembers.deleteSM(selectedID, conn1);
+			break;
+		case 5:
+			//Shutdown();
+			run = false;
+			break;
+		default:
+			System.out.println("Please select a valid option.");
+		}
 	}
+	
 	public static void menu4(){
 		userEntry = 0;
 		System.out.println("CRUD for user stories"
@@ -115,5 +154,21 @@ public class MainDB {
 				+ "	\n 4. delete user story"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
+		switch (userEntry) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:				
+			break;
+		case 5:
+			//Shutdown();
+			run = false;
+			break;
+		default:
+			System.out.println("Please select a valid option.");
+		}
 	}
 }
