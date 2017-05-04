@@ -34,10 +34,10 @@ public class MainDB {
 				menu4();
 				break;
 			case 4:				
-				//sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
+				sprint.createSprint(conn1);
 				break;
 			case 5:
-				//userStory.createUS(storyID, perspective, request, benefit, priority, conn1);
+				userStory.createUS(conn1);
 				break;
 			case 6:
 				break;
@@ -45,7 +45,7 @@ public class MainDB {
 				developer.selectDev(conn1);
 				break;
 			case 8:
-				//Shutdown();
+				Shutdown();
 				run = false;
 				break;
 			default:
@@ -91,19 +91,19 @@ public class MainDB {
 		userEntry = console.nextInt();
 		switch (userEntry) {
 		case 1:
-			//stakeHolder.createSH(stakeHolderID, shFirst, shLast, shType, projectID, conn1);
+			stakeHolder.createSH(conn1);
 			break;
 		case 2:
 			stakeHolder.selectSH(conn1);
 			break;
 		case 3:
-			//stakeHolder.updateSH(attr1, attr2, selectedID, conn1);
+			stakeHolder.updateSH(conn1);
 			break;
 		case 4:				
-			//sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
+			StakeHolder.deleteSH(conn1);
 			break;
 		case 5:
-			//Shutdown();
+			Shutdown();
 			run = false;
 			break;
 		default:
@@ -123,19 +123,19 @@ public class MainDB {
 		userEntry = console.nextInt();
 		switch (userEntry) {
 		case 1:
-			//sprintMembers.createSM(employeeID, sprintID, conn1);
+			sprintMembers.createSM(conn1);
 			break;
 		case 2:
 			sprintMembers.selectSM(conn1);
 			break;
 		case 3:
-			//sprintMembers.updateSM(attr1, attr2, selectedID, conn1);
+			sprintMembers.updateSM( conn1);
 			break;
 		case 4:				
-			//sprintMembers.deleteSM(selectedID, conn1);
+			sprintMembers.deleteSM(selectedID, conn1);
 			break;
 		case 5:
-			//Shutdown();
+			Shutdown();
 			run = false;
 			break;
 		default:
@@ -156,19 +156,36 @@ public class MainDB {
 		userEntry = console.nextInt();
 		switch (userEntry) {
 		case 1:
+			userStory.createUS(conn1);
 			break;
 		case 2:
+			userStory.selectUS(conn1);
 			break;
 		case 3:
+			userStory.updateUS(conn1);
 			break;
-		case 4:				
+		case 4:	
+			UserStory.deleteUS(conn1);
 			break;
 		case 5:
-			//Shutdown();
+			Shutdown();
 			run = false;
 			break;
 		default:
 			System.out.println("Please select a valid option.");
 		}
 	}
+	
+	// shuts down the server
+		private static void Shutdown() {
+			try {
+				System.out.println("Goodbye");
+				if (conn1 != null) {
+					conn1 = DriverManager.getConnection(dbURL1 + "shutdown=true)");
+					conn1.close();
+				}
+				System.exit(0);
+			} catch (SQLException sqlEx) {
+			}
+		}
 }
