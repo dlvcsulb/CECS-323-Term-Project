@@ -28,6 +28,34 @@ public class UserStory{
 			ex.printStackTrace();
 		}
 	}
+	public static void updateUS(String attr1, String attr2, String selectedID, Connection conn1){
+		try{
+			String sql = "UPDATE UserStory SET ? = ? WHERE storyID=?";
+			PreparedStatement statement = conn1.prepareStatement(sql);
+			statement.setString(1, attr1);
+			statement.setString(2, attr2);
+			statement.setString(3, selectedID);
+			int rowCreated = statement.executeUpdate();
+			if (rowCreated > 0) {
+			    System.out.println("User Story updated successfully.");
+			}
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+	}
+	public static void deleteUS(String selectedID, Connection conn1){
+		try{
+			String sql = "DELETE FROM UserStory WHERE storyID=?";
+			PreparedStatement statement = conn1.prepareStatement(sql);
+			statement.setString(1, selectedID);
+			int rowCreated = statement.executeUpdate();
+			if (rowCreated > 0) {
+			    System.out.println("UserStory updated successfully.");
+			}
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+	}
 	public static void selectUS(Connection conn1){
 		try{
 			stmnt = conn1.createStatement();

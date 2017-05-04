@@ -34,10 +34,10 @@ public class MainDB {
 				menu4();
 				break;
 			case 4:				
-				sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
+				//sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
 				break;
 			case 5:
-				userStory.createUS(storyID, perspective, request, benefit, priority, conn1);
+				//userStory.createUS(storyID, perspective, request, benefit, priority, conn1);
 				break;
 			case 6:
 				break;
@@ -83,24 +83,24 @@ public class MainDB {
 		System.out.println("CRUD for stakeholders"
 				+ ".........."
 				+ ". Please select one of the following options: \n"
-				+ " 1. create stakeholder"
-				+ " \n 2. select stakeholder"
-				+ " \n 3. update stakeholder"
-				+ "	\n 4. delete stakeholder"
+				+ " 1. Create Stakeholder"
+				+ " \n 2. List All Stakeholders"
+				+ " \n 3. Update a Stakeholder"
+				+ "	\n 4. Delete a Stakeholder (by ID)"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
 		switch (userEntry) {
 		case 1:
-			stakeHolder.createSH(stakeHolderID, shFirst, shLast, shType, projectID, conn1);
+			//stakeHolder.createSH(stakeHolderID, shFirst, shLast, shType, projectID, conn1);
 			break;
 		case 2:
 			stakeHolder.selectSH(conn1);
 			break;
 		case 3:
-			stakeHolder.updateSH(attr1, attr2, selectedID, conn1);
+			//stakeHolder.updateSH(attr1, attr2, selectedID, conn1);
 			break;
 		case 4:				
-			sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
+			//sprint.createSprint("sprintID", dbURL1, dbURL1, dbURL1, dbURL1, run, dbURL1, dbURL1, dbURL1, conn1);
 			break;
 		case 5:
 			//Shutdown();
@@ -123,16 +123,16 @@ public class MainDB {
 		userEntry = console.nextInt();
 		switch (userEntry) {
 		case 1:
-			sprintMembers.createSM(employeeID, sprintID, conn1);
+			//sprintMembers.createSM(employeeID, sprintID, conn1);
 			break;
 		case 2:
 			sprintMembers.selectSM(conn1);
 			break;
 		case 3:
-			sprintMembers.updateSM(attr1, attr2, selectedID, conn1);
+			//sprintMembers.updateSM(attr1, attr2, selectedID, conn1);
 			break;
 		case 4:				
-			sprintMembers.deleteSM(selectedID, conn1);
+			//sprintMembers.deleteSM(selectedID, conn1);
 			break;
 		case 5:
 			//Shutdown();
