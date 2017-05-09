@@ -1,29 +1,35 @@
-
 import java.sql.*;
 import java.util.Scanner;
 
-public class MainDB {
-	//test
+public class MainDB
+{
 	private static String dbURL1 = "jdbc:mysql://10.39.52.172:3306/teamDB?"+
 			"user=cecs323b&password=cecs323";
 	private static boolean run;
+
 	private static Connection conn1 = null;
 	private static Statement stmnt = null;
+
 	private static int userEntry = 0;
 	private static Scanner console = new Scanner(System.in);
-	private  static Sprints sprint = new Sprints();
+
+	private static Sprints sprint = new Sprints();
 	private static UserStory userStory = new UserStory();
 	private static Developer developer = new Developer();
 	private static StakeHolder stakeHolder = new StakeHolder();
 	private static SprintMembers sprintMembers = new SprintMembers();
-	
-	public static void main(String[] args) {
+
+	public static void main(String[] args)
+	{
 		CreateConnection(); //call the connection method to connect to db
 		run = true;
+
 		//Switch case menu to run the users requests
-		while (run) {
+		while (run)
+		{
 			menu1();
-			switch (userEntry) {
+			switch (userEntry)
+			{
 			case 1:
 				menu2();
 				break;
@@ -51,20 +57,25 @@ public class MainDB {
 			default:
 				System.out.println("Please select a valid option.");
 			}
-
 		}
 	}
-	
-	private static void CreateConnection(){ //connects to given database @ url
-		try{
+
+	private static void CreateConnection()
+	{
+		//connects to given database @ url
+		try
+		{
 			conn1 = DriverManager.getConnection(dbURL1);
-		}catch(SQLException ex){
+		} catch(SQLException ex)
+		{
 			ex.printStackTrace();
 		}
 	}
 
-	public static void menu1(){
+	public static void menu1()
+	{
 		userEntry = 0;
+
 		System.out.println("Welcome to the Scrum Team Database"
 				+ ".........."
 				+ ". Please select one of the following options: \n"
@@ -78,7 +89,9 @@ public class MainDB {
 				+ " \n 8. Quit.");
 		userEntry = console.nextInt();
 	}
-	public static void menu2(){
+
+	public static void menu2()
+	{
 		userEntry = 0;
 		System.out.println("CRUD for stakeholders"
 				+ ".........."
@@ -89,7 +102,9 @@ public class MainDB {
 				+ "	\n 4. Delete a Stakeholder (by ID)"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
-		switch (userEntry) {
+
+		switch (userEntry)
+		{
 		case 1:
 			stakeHolder.createSH(conn1);
 			break;
@@ -110,7 +125,8 @@ public class MainDB {
 			System.out.println("Please select a valid option.");
 		}
 	}
-	public static void menu3(){
+	public static void menu3()
+	{
 		userEntry = 0;
 		System.out.println("CRUD for sprint team members"
 				+ ".........."
@@ -121,7 +137,9 @@ public class MainDB {
 				+ "	\n 4. delete team member"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
-		switch (userEntry) {
+
+		switch (userEntry)
+		{
 		case 1:
 			sprintMembers.createSM(conn1);
 			break;
@@ -129,10 +147,10 @@ public class MainDB {
 			sprintMembers.selectSM(conn1);
 			break;
 		case 3:
-			sprintMembers.updateSM( conn1);
+			sprintMembers.updateSM(conn1);
 			break;
 		case 4:				
-			sprintMembers.deleteSM(selectedID, conn1);
+			sprintMembers.deleteSM(conn1);
 			break;
 		case 5:
 			Shutdown();
@@ -142,8 +160,9 @@ public class MainDB {
 			System.out.println("Please select a valid option.");
 		}
 	}
-	
-	public static void menu4(){
+
+	public static void menu4()
+	{
 		userEntry = 0;
 		System.out.println("CRUD for user stories"
 				+ ".........."
@@ -154,7 +173,9 @@ public class MainDB {
 				+ "	\n 4. delete user story"
 				+ " \n 5. Quit.");
 		userEntry = console.nextInt();
-		switch (userEntry) {
+
+		switch (userEntry)
+		{
 		case 1:
 			userStory.createUS(conn1);
 			break;
@@ -175,17 +196,22 @@ public class MainDB {
 			System.out.println("Please select a valid option.");
 		}
 	}
-	
+
 	// shuts down the server
-		private static void Shutdown() {
-			try {
-				System.out.println("Goodbye");
-				if (conn1 != null) {
-					conn1 = DriverManager.getConnection(dbURL1 + "shutdown=true)");
-					conn1.close();
-				}
-				System.exit(0);
-			} catch (SQLException sqlEx) {
+	private static void Shutdown()
+	{
+		try
+		{
+			System.out.println("Goodbye");
+
+			if (conn1 != null)
+			{
+				conn1 = DriverManager.getConnection(dbURL1 + "shutdown=true)");
+				conn1.close();
 			}
+			System.exit(0);
+		} catch (SQLException sqlEx)
+		{
 		}
+	}
 }
