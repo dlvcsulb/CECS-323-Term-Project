@@ -62,9 +62,8 @@ public class Developer
 				String empLast = results.getString(3);
 				String teamID = results.getString(4);
 				String projectID = results.getString(5);
-				String projectName = results.getString(6);
 				System.out.println(employeeID+"\t\t\t"+empFirst+"\t\t\t"+empLast+
-						"\t\t\t"+teamID+"\t\t\t"+projectID+"\t\t\t"+projectName);
+						"\t\t\t"+teamID+"\t\t\t"+projectID);
 			}
 			results.close();
 			stmnt.close();
