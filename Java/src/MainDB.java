@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class MainDB
 {
-	private static String dbURL1 = "jdbc:mysql://cecs-db01.coe.csulb.edu:3306?user=cecs323h29&password=eem3me&useSSL=false";
+	private static String dbURL1 = "jdbc:mysql://cecs-db01.coe.csulb.edu:3306/cecs323h29?user=cecs323h29&password=eem3me&useSSL=false";
 	private static boolean run;
 
 	private static Connection conn1 = null;
