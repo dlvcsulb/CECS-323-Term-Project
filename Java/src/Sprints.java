@@ -20,26 +20,23 @@ public class Sprints
 			String startDate = console.nextLine();
 			System.out.print("Enter the end date: ");
 			String endDate = console.nextLine();
-			System.out.print("Enter the completion status (true or false): ");
-			boolean completion = console.nextBoolean();
+			System.out.print("Enter the completion date: ");
+			String completion = console.nextLine();
 			System.out.print("Enter the user story: ");
 			String userStory = console.nextLine();
-			System.out.print("Enter the software engineers: ");
-			String softwareEngineers = console.nextLine();
 			System.out.print("Enter the project name: ");
 			String projectName = console.nextLine();
 			
-			String sql = "INSERT INTO Sprints(sprintID, projectID, sprintIteration, startDate, endDate, completion, userStory, softwareEngineers, projectName) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO Sprints(sprintID, projectID, sprintIteration, startDate, endDate, completion, userStory, projectName) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, sprintID);
 			statement.setString(2, projectID);
 			statement.setString(3, sprintIteration);
 			statement.setString(4, startDate);
 			statement.setString(5, endDate);
-			statement.setBoolean(6, completion);
+			statement.setString(6, completion);
 			statement.setString(7, userStory);
-			statement.setString(8, softwareEngineers);
-			statement.setString(9, projectName);
+			statement.setString(8, projectName);
 
 			int rowCreated = statement.executeUpdate();
 			if (rowCreated > 0)
