@@ -21,17 +21,14 @@ public class Developer
 			String teamID = console.nextLine();
 			System.out.print("Enter the project ID: ");
 			String projectID = console.nextLine();
-			System.out.print("Enter the project name: ");
-			String projectName = console.nextLine();
 			
-			String sql = "INSERT INTO Developer (employeeID, empFirst, empLast, teamID, projectID, projectName) VALUES (?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO Developer (employeeID, empFirst, empLast, teamID, projectID) VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, employeeID);
 			statement.setString(2, empFirst);
 			statement.setString(3, empLast);
 			statement.setString(4, teamID);
 			statement.setString(5, projectID);
-			statement.setString(6, projectName);
 			int rowCreated = statement.executeUpdate();
 			if (rowCreated > 0) 
 			    System.out.println("Developer added successfully.");
