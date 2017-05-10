@@ -19,7 +19,7 @@ public class SprintBacklog
 			System.out.print("Enter the sprint ID: ");
 			String sprintID = console.nextLine();
 			
-			String sql = "INSERT INTO SprintBacklog (storyID, projectID, assignedDeveloper, sprintID) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO SprintBackLog (storyID, projectID, assignedDeveloper, sprintID) VALUES (?, ?, ?, ?)";
 			PreparedStatement statement = conn1.prepareStatement(sql);
 			statement.setString(1, storyID);
 			statement.setString(2, projectID);
@@ -39,7 +39,7 @@ public class SprintBacklog
 		try
 		{
 			stmnt = conn1.createStatement();
-			ResultSet results = stmnt.executeQuery("SELECT * from SprintBacklog");
+			ResultSet results = stmnt.executeQuery("SELECT * from SprintBackLog");
 			ResultSetMetaData rsmd = results.getMetaData();
 			int numberCols = rsmd.getColumnCount();
 		

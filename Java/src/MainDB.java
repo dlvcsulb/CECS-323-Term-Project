@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 public class MainDB
 {
-	private static String dbURL1 = "jdbc:mysql://10.39.52.172:3306/teamDB?"+
-			"user=cecs323b&password=cecs323";
+	private static String dbURL1 = "jdbc:mysql://cecs-db01.coe.csulb.edu:3306?user=cecs323h29&password=eem3me";
 	private static boolean run;
 
 	private static Connection conn1 = null;
