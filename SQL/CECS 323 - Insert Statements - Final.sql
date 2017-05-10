@@ -97,19 +97,19 @@ INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20011', '50011');
 INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20012', '50012');
 INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20013', '50013');
 
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80001', '20001', 'Evita Guzman', '50001');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80002', '20002', 'Bonnie Clyde', '50002');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80003', '20003', 'Annie Wang', '50003');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80004', '20004', 'Vernon Benedicto', '50004');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80005', '20005', 'Danou Veasna', '50005');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80006', '20006', 'Caleb Quiatchon', '50006');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80007', '20007', 'Bernadette Asuncion', '50007');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80008', '20008', 'Brady Tang', '50008');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80009', '20009', 'Caroline Nguyen', '50009');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80010', '20010', 'Jessie Lo', '50010');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80011', '20011', 'Lisa McCauley', '50011');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80012', '20012', 'Anthony Kim', '50012');
-INSERT INTO SprintBacklog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80013', '20013', 'Diane Caluncagin', '50013');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80001', '20001', 'Evita Guzman', '50001');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80002', '20002', 'Bonnie Clyde', '50002');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80003', '20003', 'Annie Wang', '50003');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80004', '20004', 'Vernon Benedicto', '50004');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80005', '20005', 'Danou Veasna', '50005');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80006', '20006', 'Caleb Quiatchon', '50006');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80007', '20007', 'Bernadette Asuncion', '50007');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80008', '20008', 'Brady Tang', '50008');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80009', '20009', 'Caroline Nguyen', '50009');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80010', '20010', 'Jessie Lo', '50010');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80011', '20011', 'Lisa McCauley', '50011');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80012', '20012', 'Anthony Kim', '50012');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80013', '20013', 'Diane Caluncagin', '50013');
 
 INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80001', 'user', 'create a scrum process', 'simple interface', '8');
 INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80002', 'user', 'add scrum team', 'organizable', '8');
@@ -130,3 +130,64 @@ INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('
 
 
 
+
+
+
+
+not done
+
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00001', 'John', 'Wick', '.....', '20001');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00002', 'Adam', 'Wayne', '.....', '20002');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00003', 'Benjamin', 'Aston', '.....', '20003');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00004', 'Carol', 'Mayer', '.....', '20004');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00005', 'Genesis', 'Ocampo', '.....', '20005');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00006', 'Troy', 'Donaldson', '.....', '20006');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00007', 'Michelle', 'Tadena', '.....', '20007');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00008', 'Erica', 'Blundo', '.....', '20008');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00009', 'Yewande', 'Noah', '.....', '20009');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00010', 'Natasha', 'LeRutte', '.....', '20010');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00011', 'Kayla', 'Sapida', '.....', '20011');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00012', 'Gerald', 'Pahati', '.....', '20012');
+INSERT INTO StakeHolder(stakeHolderID, shFirst, shLast, shType, projectID) VALUES('00013', 'Tom', 'Nguyen', '.....', '20013');
+
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20001', '50001');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20002', '50002');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20003', '50003');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20004', '50004');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20005', '50005');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20006', '50006');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20007', '50007');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20008', '50008');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20009', '50009');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20010', '50010');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20011', '50011');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20012', '50012');
+INSERT INTO SprintMembers(employeeID, sprintID) VALUES('20013', '50013');
+
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80001', '20001', 'Evita Guzman', '50001');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80002', '20002', 'Bonnie Clyde', '50002');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80003', '20003', 'Annie Wang', '50003');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80004', '20004', 'Vernon Benedicto', '50004');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80005', '20005', 'Danou Veasna', '50005');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80006', '20006', 'Caleb Quiatchon', '50006');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80007', '20007', 'Bernadette Asuncion', '50007');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80008', '20008', 'Brady Tang', '50008');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80009', '20009', 'Caroline Nguyen', '50009');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80010', '20010', 'Jessie Lo', '50010');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80011', '20011', 'Lisa McCauley', '50011');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80012', '20012', 'Anthony Kim', '50012');
+INSERT INTO SprintBackLog(storyID, projectID, assignedDeveloper, sprintID) VALUES('80013', '20013', 'Diane Caluncagin', '50013');
+
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80001', 'user', 'create a scrum process', 'simple interface', '8');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80002', 'developer', 'add scrum team', 'organizable', '8');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80003', 'manager', 'add start date', 'track of inception', '6');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80004', 'stakeholder', 'add end date', 'track of end', '6');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80005', 'user', 'add completion date', 'track of the actual date completed', '4');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80006', 'developer', 'add name of project', 'differentiate the names of the project', '6');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80007', 'manager', 'add developer to project', 'Keeps track of each projects developers', '4');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80008', 'stakeholder', 'add stakeholders to the project', 'Keeps track of investors', '6');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80009', 'user', 'add different roles in the project', 'Fills in the roles needed for the project', '8');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80010', 'developer', 'add sprints to the project', 'Shows each individualized task at hand', '7');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80011', 'manager', 'add members to each individual sprint', 'Shows who\'s in charge of what task', '7');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80012', 'stakeholder', 'add user stories to each project', 'Interaction between product and end user', '9');
+INSERT INTO UserStory(storyID, perspective, request, benefit, priority) VALUES('80013', 'user', 'add the benefits of each user story', 'Displays what benefits each user prompt gives to the project', '9');
